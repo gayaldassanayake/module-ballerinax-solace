@@ -18,11 +18,11 @@
 
 package io.ballerina.lib.solace.config;
 
+import io.ballerina.lib.solace.consumer.AcknowledgementMode;
 import io.ballerina.runtime.api.utils.StringUtils;
 import io.ballerina.runtime.api.values.BDecimal;
 import io.ballerina.runtime.api.values.BMap;
 import io.ballerina.runtime.api.values.BString;
-import io.ballerina.lib.solace.consumer.AcknowledgementMode;
 
 import java.math.BigDecimal;
 

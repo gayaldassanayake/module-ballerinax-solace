@@ -29,10 +29,10 @@ import com.solacesystems.jcsmp.Queue;
 import com.solacesystems.jcsmp.Topic;
 import com.solacesystems.jcsmp.XMLMessage;
 import com.solacesystems.jcsmp.XMLMessageConsumer;
-import io.ballerina.runtime.api.values.BObject;
 import io.ballerina.lib.solace.config.ConsumerSubscriptionConfig;
 import io.ballerina.lib.solace.config.QueueConsumerConfig;
 import io.ballerina.lib.solace.config.TopicConsumerConfig;
+import io.ballerina.runtime.api.values.BObject;
 
 import static io.ballerina.lib.solace.common.Constants.NATIVE_CONSUMER;
 import static io.ballerina.lib.solace.common.Constants.NATIVE_FLOW;

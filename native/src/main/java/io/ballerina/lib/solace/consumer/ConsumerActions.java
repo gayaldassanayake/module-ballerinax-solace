@@ -26,13 +26,6 @@ import com.solacesystems.jcsmp.JCSMPSession;
 import com.solacesystems.jcsmp.XMLMessage;
 import com.solacesystems.jcsmp.XMLMessageConsumer;
 import com.solacesystems.jcsmp.transaction.TransactedSession;
-import io.ballerina.runtime.api.Environment;
-import io.ballerina.runtime.api.values.BArray;
-import io.ballerina.runtime.api.values.BDecimal;
-import io.ballerina.runtime.api.values.BError;
-import io.ballerina.runtime.api.values.BMap;
-import io.ballerina.runtime.api.values.BObject;
-import io.ballerina.runtime.api.values.BString;
 import io.ballerina.lib.solace.common.CommonUtils;
 import io.ballerina.lib.solace.config.ConfigurationUtils;
 import io.ballerina.lib.solace.config.ConsumerConfiguration;
@@ -41,6 +34,13 @@ import io.ballerina.lib.solace.config.QueueConsumerConfig;
 import io.ballerina.lib.solace.config.TopicConsumerConfig;
 import io.ballerina.lib.solace.observability.SolaceMetricsUtil;
 import io.ballerina.lib.solace.observability.SolaceTracingUtil;
+import io.ballerina.runtime.api.Environment;
+import io.ballerina.runtime.api.values.BArray;
+import io.ballerina.runtime.api.values.BDecimal;
+import io.ballerina.runtime.api.values.BError;
+import io.ballerina.runtime.api.values.BMap;
+import io.ballerina.runtime.api.values.BObject;
+import io.ballerina.runtime.api.values.BString;
 
 import java.math.BigDecimal;
 

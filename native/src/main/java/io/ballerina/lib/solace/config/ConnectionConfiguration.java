@@ -18,16 +18,16 @@
 
 package io.ballerina.lib.solace.config;
 
-import io.ballerina.runtime.api.utils.StringUtils;
-import io.ballerina.runtime.api.values.BDecimal;
-import io.ballerina.runtime.api.values.BMap;
-import io.ballerina.runtime.api.values.BString;
 import io.ballerina.lib.solace.config.auth.AuthConfig;
 import io.ballerina.lib.solace.config.auth.BasicAuthConfig;
 import io.ballerina.lib.solace.config.auth.KerberosConfig;
 import io.ballerina.lib.solace.config.auth.OAuth2Config;
 import io.ballerina.lib.solace.config.retry.RetryConfig;
 import io.ballerina.lib.solace.config.ssl.SecureSocketConfig;
+import io.ballerina.runtime.api.utils.StringUtils;
+import io.ballerina.runtime.api.values.BDecimal;
+import io.ballerina.runtime.api.values.BMap;
+import io.ballerina.runtime.api.values.BString;
 
 import java.math.BigDecimal;
 
