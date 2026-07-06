@@ -152,7 +152,19 @@ task commitTomlFiles {
     }
 }
 
+task generateTestCerts() {
+    doLast {
+        if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
+            def certScript = "${project.projectDir}/tests/resources/certs/generate-certs.sh"
+            exec {
+                commandLine 'sh', '-c', "chmod +x $certScript && $certScript"
+            }
+        }
+    }
+}
+
 task startSolaceServer() {
+    dependsOn generateTestCerts
     doLast {
         if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
             def dockerComposeFile = "${project.projectDir}/tests/resources/docker-compose.yaml"
