@@ -24,6 +24,12 @@ The `Solace` connector provides practical examples illustrating usage in various
 
 [//]: # (TODO: Add examples)
 
+## Examples
+
+The [examples](examples) directory contains complete, runnable samples:
+
+- [Order listener](examples/order-listener) — asynchronous (push-based) message consumption from a queue using the `solace:Listener`, with explicit acknowledgement through the `solace:Caller`.
+
 ## Build from the source
 
 ### Setting up the prerequisites

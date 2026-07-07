@@ -16,4 +16,4 @@ The `ballerinax/solace` package provides APIs to interact with Solace PubSub+ br
 
 The `Solace` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-solace/tree/main/examples/), covering the following use cases:
 
-[//]: # (TODO: Add examples)
+- [Order listener](https://github.com/ballerina-platform/module-ballerinax-solace/tree/main/examples/order-listener) — asynchronous (push-based) message consumption from a queue using the `solace:Listener`, with explicit acknowledgement through the `solace:Caller`.

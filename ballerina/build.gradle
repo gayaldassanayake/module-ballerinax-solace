@@ -82,6 +82,9 @@ dependencies {
     externalJars(group: 'io.netty', name: 'netty-buffer', version: "${nettyVersion}") {
         transitive = false
     }
+    externalJars(group: 'io.netty', name: 'netty-codec', version: "${nettyVersion}") {
+        transitive = false
+    }
     externalJars(group: 'io.netty', name: 'netty-codec-http', version: "${nettyVersion}") {
         transitive = false
     }
@@ -169,6 +172,12 @@ task startSolaceServer() {
         if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
             def dockerComposeFile = "${project.projectDir}/tests/resources/docker-compose.yaml"
             def initScript = "${project.projectDir}/tests/resources/init-solace.sh"
+            // Ensure a fresh broker: remove any container/volume left behind by an interrupted run so
+            // tests never bind to stale queue state (e.g. a leaked flow on an exclusive queue).
+            exec {
+                commandLine 'sh', '-c', "docker compose -f $dockerComposeFile down -v --remove-orphans"
+                ignoreExitValue true
+            }
             exec {
                 commandLine 'sh', '-c', "docker compose -f $dockerComposeFile up -d"
             }
