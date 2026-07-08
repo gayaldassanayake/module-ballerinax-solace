@@ -20,15 +20,15 @@ The `ballerinax/solace` package provides APIs to interact with Solace PubSub+ br
 
 ## Examples
 
-The `Solace` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-solace/tree/main/examples/), covering the following use cases:
+The `ballerinax/solace` package provides practical examples illustrating its usage in various real-world scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-solace/tree/main/examples) to understand how to produce, consume, and reliably process messages with a Solace event broker.
 
-[//]: # (TODO: Add examples)
+1. [Order Fulfillment](examples/order-fulfillment/Order%20Fulfillment.md) - Send orders to a queue and process them with `CLIENT_ACK` mode, so a worker that crashes before acknowledging a message picks it back up on restart.
 
-## Examples
+2. [Live Price Alerts](examples/live-price-alerts/Live%20Price%20Alerts.md) - Publish stock price updates to hierarchical topics and raise alerts only for significant moves, using a topic wildcard and direct (at-most-once) delivery.
 
-The [examples](examples) directory contains complete, runnable samples:
+3. [Transactional Inventory Sync](examples/transactional-inventory-sync/Transactional%20Inventory%20Sync.md) - Apply inventory deltas from a queue within a transacted session, rolling back and safely discarding a bad update instead of corrupting inventory state.
 
-- [Order listener](examples/order-listener) — asynchronous (push-based) message consumption from a queue using the `solace:Listener`, with explicit acknowledgement through the `solace:Caller`.
+4. [Payment Processing](examples/payment-processing/Payment%20Processing.md) - Reject an invalid payment outright while retrying one that hits a simulated transient failure, using negative acknowledgement (`nack`) with and without requeueing.
 
 ## Build from the source
 
