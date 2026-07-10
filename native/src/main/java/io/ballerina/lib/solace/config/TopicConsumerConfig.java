@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * Topic consumer configuration. Represents the subscription to a topic for receiving messages, shared by both the
  * synchronous (pull-based) MessageConsumer and the asynchronous (push-based) Listener. Maps to
- * TopicSubscription/TopicServiceConfig in Ballerina types.bal.
+ * TopicConfiguration/TopicServiceConfiguration in Ballerina types.bal.
  *
  * @param topicName                     the name of the topic to subscribe to
  * @param ackMode                       the JCSMP acknowledgement mode (SUPPORTED_MESSAGE_ACK_AUTO or

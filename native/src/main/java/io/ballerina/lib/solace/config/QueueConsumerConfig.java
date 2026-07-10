@@ -30,7 +30,7 @@ import java.math.BigDecimal;
 /**
  * Queue consumer configuration. Represents the subscription to a queue endpoint for receiving guaranteed messages,
  * shared by both the synchronous (pull-based) MessageConsumer and the asynchronous (push-based) Listener. Maps to
- * QueueSubscription/QueueServiceConfig in Ballerina types.bal.
+ * QueueConfiguration/QueueServiceConfiguration in Ballerina types.bal.
  *
  * @param queueName                     the name of the queue to consume from
  * @param temporary                     whether this is a temporary queue (auto-deleted when session disconnects)
