@@ -31,8 +31,11 @@ import com.solacesystems.jcsmp.XMLMessageProducer;
 import io.ballerina.lib.solace.common.DestinationConverter;
 import io.ballerina.lib.solace.common.PropertyConverter;
 import io.ballerina.runtime.api.values.BArray;
+import io.ballerina.runtime.api.values.BDecimal;
 import io.ballerina.runtime.api.values.BMap;
 import io.ballerina.runtime.api.values.BString;
+
+import java.math.BigDecimal;
 
 import static io.ballerina.lib.solace.common.MessageFieldConstants.APPLICATION_MESSAGE_ID_KEY;
 import static io.ballerina.lib.solace.common.MessageFieldConstants.APPLICATION_MESSAGE_TYPE_KEY;
@@ -118,11 +121,10 @@ public class MessageConverter {
             jcsmpMessage.setPriority(priorityValue);
         }
 
-        // Time to live in milliseconds
-        Long timeToLive = message.getIntValue(TIME_TO_LIVE_KEY);
-        if (timeToLive != null) {
-            long ttl = timeToLive;
-            jcsmpMessage.setTimeToLive(ttl);
+        // Time to live (seconds, converted to milliseconds)
+        Object timeToLive = message.get(TIME_TO_LIVE_KEY);
+        if (timeToLive instanceof BDecimal timeToLiveDecimal) {
+            jcsmpMessage.setTimeToLive(decimalToMillis(timeToLiveDecimal.decimalValue()));
         }
 
         // Application message ID
@@ -215,6 +217,13 @@ public class MessageConverter {
         // Use attachment instead of content
         message.setData(content);
         return message;
+    }
+
+    /**
+     * Converts decimal seconds to milliseconds.
+     */
+    private static long decimalToMillis(BigDecimal seconds) {
+        return seconds.multiply(BigDecimal.valueOf(1000)).longValue();
     }
 
 }
